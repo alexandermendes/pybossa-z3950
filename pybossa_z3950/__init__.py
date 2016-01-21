@@ -15,9 +15,9 @@ class PyBossaZ3950(Plugin):
     def setup(self):
         """Setup plugin."""
         try:
-        	if app.config['Z3950_DATABASES']:
-        		z3950_manager = Z3950Manager(app)
-        		z3950_manager.register_blueprint(url_prefix="/z3950")
+            if app.config['Z3950_DATABASES']:
+                z3950_manager = Z3950Manager(app)
+                z3950_manager.register_blueprint(url_prefix="/z3950")
         except Exception as inst:  # pragma: no cover
             print type(inst)
             print inst.args
