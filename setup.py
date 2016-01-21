@@ -3,23 +3,32 @@
 pybossa-z3950
 -------------
 
-A PyBossa plugin that provides Z39.50 integration.
+A PyBossa plugin for Z39.50 integration.
 """
 
+import re
 import os
 from setuptools import setup
 
+
+version = re.search('^__version__\s*=\s*"(.*)"',
+                    open('pybossa_z3950/__init__.py').read(),
+                    re.M).group(1)
+
+
 try:
     here = os.path.dirname(__file__)
-    long_description = open(os.path.join(here, 'docs', 'index.rst')).read()
+    long_description = open(os.path.join(here, 'docs', 'readme.rst')).read()
 except:
     long_description = ""
 
-requirements = ["Flask-Z3950>=0.1.0"]
+
+requirements = ["Flask-Z3950>=0.2.1"]
+
 
 setup(
-    name="Flask-Z3950",
-    version="0.1.1",
+    name="pybossa-z3950",
+    version=version,
     author="Alexander Mendes",
     author_email="alexanderhmendes@gmail.com",
     description="A PyBossa plugin that provides Z39.50 integration.",
