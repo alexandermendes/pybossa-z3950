@@ -1,9 +1,9 @@
 {
-    "identifier": "pybossa_gravatar",
-    "name": "pybossa-gravatar",
+    "identifier": "pybossa_z3950",
+    "name": "pybossa-z3950",
     "author": "Alexander Mendes",
-    "website": "https://github.com/alexandermendes/pybossa-gravatar",
+    "website": "https://github.com/alexandermendes/pybossa-z3950",
     "license": "BSD",
-    "description": "A PyBossa plugin for Gravatar integration.",
+    "description": "A PyBossa plugin for Z39.50 integration.",
     "version": "0.0.1"
 }
