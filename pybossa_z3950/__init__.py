@@ -29,6 +29,5 @@ class PyBossaZ3950(Plugin):
 
     def setup_blueprint(self):
         """Setup blueprint."""
-        from .blueprint import Z3950Blueprint
-        blueprint = Z3950Blueprint()
+        from .view import blueprint
         app.register_blueprint(blueprint, url_prefix="/z3950")
