@@ -8,67 +8,78 @@ pybossa-z3950
 
 A PyBossa plugin for [Z3950](https://en.wikipedia.org/wiki/Z39.50) integration.
 
-The plugin imports and initialises [Flask-Z3950](https://github.com/alexandermendes/Flask-Z3950),
-making use of the default view functions to implement Z39.50 search capabilities. Some additional
-functionality is added to allow you to easily integrate those search capabilities into your
-PyBossa projects.
+The plugin exposes the view functions provided by
+[Flask-Z3950](https://github.com/alexandermendes/Flask-Z3950), making it easy to
+integrate Z39.50 searches into PyBossa projects.
 
 
 ## Installation
 
-Firstly, install some required development packages:
+Install the required development packages:
 
-```
+``` Console
 sudo apt-get install libxml2-dev libxslt-dev python-dev lib32z1-dev
 ```
 
-Now, install pybossa-z3950, copy the [pybossa_z3950](pybossa_z3950)
-folder into your PyBossa [plugins](https://github.com/PyBossa/pybossa/tree/master/pybossa/plugins)
-directory and reboot the PyBossa server:
+Install pybossa-z3950, remembering to **activate your virtual environment**:
 
-```
+``` Console
 git clone https://github.com/alexandermendes/pybossa-z3950.git
 cd pybossa-z3950
+source /home/pybossa/pybossa/env/bin/activate
 python setup.py install
-cp -r pybossa_z3950 /home/pybossa/pybossa/plugins
-# Now Restart your server
 ```
+
+Copy the [pybossa_z3950](pybossa_z3950) folder into your PyBossa
+[plugins](https://github.com/PyBossa/pybossa/tree/master/pybossa/plugins) directory.
+
+``` Console
+cp -r pybossa_z3950 /home/pybossa/pybossa/pybossa/plugins
+```
+
+The plugin will be available after you next reboot the server.
 
 
 ## Configuration
 
-The configuration variables can be added to your main PyBossa configuration file:
+You can provide Z39.50 database configuration details by adding the following
+variable to your main PyBossa configuration file:
 
-|     Setting     |                  Purpose              |
-|-----------------|---------------------------------------|
-| Z3950_DATABASES | Z39.50 database configuration details |
+``` Python
+Z3950_DATABASES = ["loc": {"db": "Voyager", "host": "z3950.loc.gov", "port": 7090}]
+```
 
+The example above is enough to allow you to search to the Library of Congress
+database.
 
-Refer to the [Flask-Z3950 documentation](https://pythonhosted.org/Flask-Z3950/#configuration)
+See the [Flask-Z3950 documentation](https://pythonhosted.org/Flask-Z3950/#configuration)
 for more details.
 
 
-## Usage
+## HTTP API
 
-The plugin sets up an API that can be used to search databases via the Z39.50 protocol.
-Results can be returned in MARCXML, JSON, HTML, or as raw data. For details about
-how this API works refer to the [Flask-Z3950 documentation](https://pythonhosted.org/Flask-Z3950/).
+The API provided by this plugin can be used to search databases via the Z39.50 protocol and
+retrieve results as JSON, HTML, MARCXML or raw string data.
+
 By default, the API endpoints are located at:
 
-```
+``` HTTP
 GET /z3950/search/<db>/marcxml
 GET /z3950/search/<db>/json
 GET /z3950/search/<db>/html
 GET /z3950/search/<db>/raw
 ```
 
+See the [Flask-Z3950 documentation](https://pythonhosted.org/Flask-Z3950/#http-api)
+for full details.
+
 
 ## Testing
 
 Just run the following command:
 
-```
-$ python setup.py test
+``` Console
+python setup.py test
 ```
 
 
