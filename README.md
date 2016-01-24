@@ -1,43 +1,38 @@
-pybossa-z3950
-*************
+# pybossa-z3950
 
 [![Build Status](https://travis-ci.org/alexandermendes/pybossa-z3950.svg?branch=master)]
 (https://travis-ci.org/alexandermendes/pybossa-z3950)
 [![Coverage Status](https://coveralls.io/repos/alexandermendes/pybossa-z3950/badge.svg)]
 (https://coveralls.io/github/alexandermendes/pybossa-z3950?branch=master)
 
-A PyBossa plugin for [Z3950](https://en.wikipedia.org/wiki/Z39.50) integration.
-
-The plugin exposes the view functions provided by
-[Flask-Z3950](https://github.com/alexandermendes/Flask-Z3950), making it easy to
-integrate Z39.50 searches into PyBossa projects.
+A [PyBossa](https://github.com/PyBossa/pybossa) plugin for [Z3950](https://en.wikipedia.org/wiki/Z39.50) integration.
 
 
 ## Installation
 
 Install the required development packages:
 
-``` Console
+``` bash
 sudo apt-get install libxml2-dev libxslt-dev python-dev lib32z1-dev
 ```
 
 Install pybossa-z3950, remembering to **activate your virtual environment**:
 
-``` Console
-git clone https://github.com/alexandermendes/pybossa-z3950.git
+``` bash
+git clone https://github.com/alexandermendes/pybossa-z3950
 cd pybossa-z3950
 source /home/pybossa/pybossa/env/bin/activate
 python setup.py install
 ```
 
 Copy the [pybossa_z3950](pybossa_z3950) folder into your PyBossa
-[plugins](https://github.com/PyBossa/pybossa/tree/master/pybossa/plugins) directory.
+[plugins](https://github.com/PyBossa/pybossa/tree/master/pybossa/plugins) directory:
 
-``` Console
+``` bash
 cp -r pybossa_z3950 /home/pybossa/pybossa/pybossa/plugins
 ```
 
-The plugin will be available after you next reboot the server.
+The plugin will be available after you next restart the server.
 
 
 ## Configuration
@@ -50,9 +45,7 @@ Z3950_DATABASES = ["loc": {"db": "Voyager", "host": "z3950.loc.gov", "port": 709
 ```
 
 The example above is enough to allow you to search to the Library of Congress
-database.
-
-See the [Flask-Z3950 documentation](https://pythonhosted.org/Flask-Z3950/#configuration)
+database. See the [Flask-Z3950 documentation](https://pythonhosted.org/Flask-Z3950/#configuration)
 for more details.
 
 
@@ -76,15 +69,12 @@ for full details.
 
 ## Testing
 
-Just run the following command:
-
-``` Console
-python setup.py test
-```
+This plugin makes use of the PyBossa test suite while running tests. The 
+[Travis CI configuration file](.travis.yml) contains all of the required commands to set
+up a test environment and run the tests.
 
 
 ## Contributing
 
-For guidelines on how to suggest improvements, report bugs or submit pull
-requests see the
-[CONTRIBUTING](https://github.com/alexandermendes/Flask-Z3950/blob/master/CONTRIBUTING.md) file.
+See the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to suggest improvements, 
+report bugs or submit pull requests.
