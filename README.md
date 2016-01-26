@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/alexandermendes/pybossa-z3950/badge.svg)]
 (https://coveralls.io/github/alexandermendes/pybossa-z3950?branch=master)
 
-A [PyBossa](https://github.com/PyBossa/pybossa) plugin for [Z3950](https://en.wikipedia.org/wiki/Z39.50) integration.
+A [PyBossa](https://github.com/PyBossa/pybossa) plugin that uses [Flask-Z3950](https://github.com/alexandermendes/Flask-Z3950) to provide [Z39.50](https://en.wikipedia.org/wiki/Z39.50) integration.
 
 
 ## Installation
@@ -69,12 +69,12 @@ for full details.
 
 ## Testing
 
-This plugin makes use of the PyBossa test suite while running tests. The 
+This plugin makes use of the PyBossa test suite while running tests. The
 [Travis CI configuration file](.travis.yml) contains all of the required commands to set
 up a test environment and run the tests.
 
 
 ## Contributing
 
-See the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to suggest improvements, 
+See the [CONTRIBUTING](CONTRIBUTING.md) file for guidelines on how to suggest improvements,
 report bugs or submit pull requests.
