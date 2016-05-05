@@ -23,7 +23,7 @@ except:
     long_description = ""
 
 
-requirements = ["Flask-Z3950>=0.2.3"]
+requirements = ["Flask-Z3950>=0.2.4"]
 
 
 setup(

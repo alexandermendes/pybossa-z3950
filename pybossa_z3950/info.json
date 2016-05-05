@@ -5,5 +5,5 @@
     "website": "https://github.com/alexandermendes/pybossa-z3950",
     "license": "BSD",
     "description": "A PyBossa plugin for Z39.50 integration.",
-    "version": "0.1.2"
+    "version": "0.1.3"
 }
