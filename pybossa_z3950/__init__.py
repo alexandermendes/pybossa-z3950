@@ -6,7 +6,7 @@ from flask.ext.plugins import Plugin
 from flask.ext.z3950 import Z3950Manager
 
 __plugin__ = "PyBossaZ3950"
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 class PyBossaZ3950(Plugin):
