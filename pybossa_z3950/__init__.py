@@ -1,12 +1,15 @@
 # -*- coding: utf8 -*-
 """Main package for pybossa-z3950."""
 
+import os
+import json
 from flask import current_app as app
 from flask.ext.plugins import Plugin
 from flask.ext.z3950 import Z3950Manager
 
 __plugin__ = "PyBossaZ3950"
-__version__ = "0.1.3"
+__version__ = json.load(open(os.path.join(os.path.dirname(__file__),
+                                          'info.json')))['version']
 
 
 class PyBossaZ3950(Plugin):
