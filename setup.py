@@ -6,14 +6,12 @@ pybossa-z3950
 A PyBossa plugin for Z39.50 integration.
 """
 
-import re
 import os
+import json
 from setuptools import setup
 
-
-version = re.search('^__version__\s*=\s*"(.*)"',
-                    open('pybossa_z3950/__init__.py').read(),
-                    re.M).group(1)
+info = os.path.join(os.path.dirname(__file__), 'pybossa_z3950', 'info.json')
+version = json.load(open(info))['version']
 
 
 try:
