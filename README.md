@@ -8,26 +8,21 @@ A [PyBossa](https://github.com/PyBossa/pybossa) plugin that uses [Flask-Z3950](h
 
 ## Installation
 
-Install the required development packages:
-
 ``` bash
+# install dependencies
 sudo apt-get install libxml2-dev libxslt-dev python-dev lib32z1-dev
-```
 
-Install pybossa-z3950, remembering to **activate your virtual environment**:
+# clone
+git clone https://github.com/alexandermendes/pybossa-z3950 /home/pybossa/pybossa/plugins
 
-``` bash
-git clone https://github.com/alexandermendes/pybossa-z3950
-cd pybossa-z3950
+# activate virtual env
 source /home/pybossa/pybossa/env/bin/activate
+
+# install plugin
+cd /home/pybossa/pybossa/plugins/pybossa-z3950
 python setup.py install
-```
-
-Copy the [pybossa_z3950](pybossa_z3950) folder into your PyBossa
-[plugins](https://github.com/PyBossa/pybossa/tree/master/pybossa/plugins) directory:
-
-``` bash
-cp -r pybossa_z3950 /home/pybossa/pybossa/pybossa/plugins
+cd ..
+ln -s pybossa-z3950/pybossa_z3950 pybossa_z3950
 ```
 
 The plugin will be available after you next restart the server.
