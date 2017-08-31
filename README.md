@@ -1,9 +1,7 @@
 # pybossa-z3950
 
-[![Build Status](https://travis-ci.org/alexandermendes/pybossa-z3950.svg?branch=master)]
-(https://travis-ci.org/alexandermendes/pybossa-z3950)
-[![Coverage Status](https://coveralls.io/repos/alexandermendes/pybossa-z3950/badge.svg)]
-(https://coveralls.io/github/alexandermendes/pybossa-z3950?branch=master)
+[![Build Status](https://travis-ci.org/alexandermendes/pybossa-z3950.svg?branch=master)](https://travis-ci.org/alexandermendes/pybossa-z3950)
+[![Coverage Status](https://coveralls.io/repos/alexandermendes/pybossa-z3950/badge.svg)](https://coveralls.io/github/alexandermendes/pybossa-z3950?branch=master)
 
 A [PyBossa](https://github.com/PyBossa/pybossa) plugin that uses [Flask-Z3950](https://github.com/alexandermendes/Flask-Z3950) to provide [Z39.50](https://en.wikipedia.org/wiki/Z39.50) integration.
 
