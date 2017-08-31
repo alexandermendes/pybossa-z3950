@@ -22,7 +22,7 @@ source /home/pybossa/pybossa/env/bin/activate
 cd /home/pybossa/pybossa/plugins/pybossa-z3950
 python setup.py install
 cd ..
-ln -s pybossa-z3950/pybossa_z3950 pybossa_z3950
+cp -r pybossa-z3950/pybossa_z3950 pybossa_z3950
 ```
 
 The plugin will be available after you next restart the server.
